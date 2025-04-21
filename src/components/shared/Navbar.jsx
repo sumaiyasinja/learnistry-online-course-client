@@ -5,6 +5,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showUsername, setShowUsername] = useState(false);
 
   const handleSignOut = () => {
     logOut()
@@ -25,11 +26,30 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink
-        to="/allcourse"
+        to="/find-tutors "
         className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
       >
-        All Course
+        Find tutors 
       </NavLink>
+      <NavLink
+        to="/add-tutorials "
+        className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
+      >
+        Add tutorials 
+      </NavLink>
+      <NavLink
+        to="/my-tutorials"
+        className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
+      >
+        My Tutorials 
+      </NavLink>
+      <NavLink
+        to="/my-booked-tutors"
+        className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
+      >
+        My booked tutors
+      </NavLink>
+      
 
     </>
   );
@@ -56,9 +76,23 @@ const Navbar = () => {
           {/* Desktop Auth Buttons */}
           {user ? (
             <div className="hidden lg:flex lg:items-center gap-x-2">
-             <div>
-              <img src={user?.photoURL} alt={user?.displayName} className="w-10 h-10 rounded-full" />
-              </div>
+             <div className="relative">
+  <img
+    src={user?.photoURL}
+    alt={user?.displayName}
+    className="w-10 h-10 rounded-full cursor-pointer"
+    onClick={() => setShowUsername((prev) => !prev)}
+  />
+  
+  {showUsername && (
+    <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg py-2 z-20">
+      <p className="block px-4 py-2 text-sm text-gray-700 dark:text-white">
+        ○ {user?.displayName}
+      </p>
+    </div>
+  )}
+</div>
+
               <button
                 onClick={handleSignOut}
                 className="flex items-center cursor-pointer justify-center rounded-md bg-amber-800 hover:bg-white hover:text-amber-800 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
