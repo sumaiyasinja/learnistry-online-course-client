@@ -26,13 +26,13 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink
-        to="/find-tutors "
+        to="/find-tutors"
         className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
       >
         Find tutors 
       </NavLink>
       <NavLink
-        to="/add-tutorials "
+        to="/add-tutorials"
         className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
       >
         Add tutorials 
@@ -77,17 +77,23 @@ const Navbar = () => {
           {user ? (
             <div className="hidden lg:flex lg:items-center gap-x-2">
              <div className="relative">
+  {/* User Profile Picture and Name */}
+  <div onClick={() => setShowUsername((prev) => !prev)} 
+  className=" rounded-full"
+  >
+
   <img
     src={user?.photoURL}
     alt={user?.displayName}
-    className="w-10 h-10 rounded-full cursor-pointer"
-    onClick={() => setShowUsername((prev) => !prev)}
-  />
+    className="w-10 h-10  rounded-full cursor-pointer"
+    // onClick={() => setShowUsername((prev) => !prev)}
+    />
+    </div>
   
   {showUsername && (
-    <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg py-2 z-20">
-      <p className="block px-4 py-2 text-sm text-gray-700 dark:text-white">
-        ○ {user?.displayName}
+    <div className="absolute right-0 mt-2 px-2 rounded-2xl  border bg-amber-100 border-gray-200 dark:border-gray-700 shadow-lg py-1 z-20">
+      <p className="block px-2 text-sm text-gray-700 dark:text-white">
+         {user?.displayName}
       </p>
     </div>
   )}

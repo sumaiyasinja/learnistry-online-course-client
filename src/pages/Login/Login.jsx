@@ -3,18 +3,28 @@ import { useLocation, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { auth } from "../../firebase/firebase.config";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Helmet } from "react-helmet";
+import { useLottie } from "lottie-react";
+import animationData from "../../assets/login/animatedstu.json";
+
 
 const Login = () => {
-  const { loginWithEmailPassword, googleSignIn } = useContext(AuthContext);
+  const { loginWithEmailPassword, loginWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const options = {
+    animationData: animationData,
+    loop: true
+  };
+  const { View } = useLottie(options);
+
 
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log("You clicked submit." + email + password);
+    // console.log("You clicked submit." + email + password);
 
     loginWithEmailPassword(email, password)
       .then(() => {
@@ -27,8 +37,8 @@ const Login = () => {
       });
   };
 
-  const handleGoogleSignIn = () => {
-    googleSignIn()
+  const handleloginWithGoogle = () => {
+    loginWithGoogle()
       .then(() => {
         toast.success("Successfully logged in");
         const user = {
@@ -85,12 +95,12 @@ const Login = () => {
       <div className="flex w-full overflow-hidden rounded-xl shadow-md h-full py-6">
         {/* Design Side */}
         <div className="relative hidden items-center justify-center md:flex md:w-[50%]">
-          <div className="w-[80%]">{/* img */}</div>
+          <div className="w-[80%]">{View}</div>
         </div>
 
         {/* Form Side */}
         <div className="flex w-full flex-col justify-center bg-white py-10 lg:w-[60%] dark:bg-zinc-900">
-          <h2 className="pb-8 text-center text-3xl font-semibold tracking-tight text-purple-600">
+          <h2 className="pb-8 text-center text-3xl font-semibold tracking-tight text-yellow-600">
             Sign In
           </h2>
 
@@ -99,14 +109,14 @@ const Login = () => {
             className="flex w-full flex-col items-center justify-center gap-4"
           >
             <input
-              className="w-[80%] rounded-lg border border-purple-600 bg-transparent py-2 pl-4 text-zinc-600 focus:outline-none focus:ring-2 focus:ring-purple-600/50 md:w-[60%] dark:text-zinc-400"
+              className="w-[80%] rounded-lg border border-yellow-600 bg-transparent py-2 pl-4 text-zinc-600 focus:outline-none focus:ring-2 focus:ring-yellow-600/50 md:w-[60%] dark:text-zinc-400"
               type="email"
               placeholder="Email"
               name="email"
               required
             />
             <input
-              className="w-[80%] rounded-lg border border-purple-600 bg-transparent py-2 pl-4 text-zinc-600 focus:outline-none focus:ring-2 focus:ring-purple-600/50 md:w-[60%] dark:text-zinc-400"
+              className="w-[80%] rounded-lg border border-yellow-600 bg-transparent py-2 pl-4 text-zinc-600 focus:outline-none focus:ring-2 focus:ring-yellow-600/50 md:w-[60%] dark:text-zinc-400"
               type="password"
               placeholder="Password"
               name="password"
@@ -114,32 +124,32 @@ const Login = () => {
             />
             <p className="text-[14px] text-gray-400">
               Do not have an account?{" "}
-              <a href="/register" className="text-purple-600">
+              <a href="/register" className="text-yellow-600">
                 Create one
               </a>
             </p>
             <input
               type="submit"
-              className="uppercase w-[80%] rounded-lg bg-purple-600 px-6 py-2 font-medium text-white outline-none hover:bg-purple-600 md:w-[60%]"
+              className="uppercase w-[80%] rounded-lg bg-yellow-600 px-6 py-2 font-medium text-white outline-none hover:bg-yellow-600 md:w-[60%]"
             />
           </form>
 
           {/* Divider */}
           <div className="my-8 flex items-center px-8">
-            <hr className="flex-1 border-purple-600" />
-            <div className="mx-4 text-purple-600">OR</div>
-            <hr className="flex-1 border-purple-600" />
+            <hr className="flex-1 border-yellow-600" />
+            <div className="mx-4 text-yellow-600">OR</div>
+            <hr className="flex-1 border-yellow-600" />
           </div>
 
           {/* Sign in with Google */}
           <button
-            onClick={handleGoogleSignIn}
-            className="group mx-auto flex h-[50px] w-fit items-center overflow-hidden rounded-full shadow-md outline-none ring-1 ring-purple-600"
+            onClick={handleloginWithGoogle}
+            className="group mx-auto flex h-[50px] w-fit items-center overflow-hidden rounded-full shadow-md outline-none ring-1 ring-yellow-600"
           >
-            <div className="relative z-20 flex h-full items-center bg-purple-600 px-4 text-lg text-white duration-300 group-hover:bg-transparent group-hover:text-purple-600">
+            <div className="relative z-20 flex h-full items-center bg-yellow-600 px-4 text-lg text-white duration-300 group-hover:bg-transparent group-hover:text-yellow-600">
               Sign in with
             </div>
-            <span className="flex h-full items-center px-4 text-xl font-bold text-purple-600 duration-300 group-hover:bg-purple-600 group-hover:text-white">
+            <span className="flex h-full items-center px-4 text-xl font-bold text-yellow-600 duration-300 group-hover:bg-yellow-600 group-hover:text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"

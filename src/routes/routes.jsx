@@ -23,6 +23,18 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+      {
+        path: "/find-tutors",
+        element: <Home />,
+      },
+      {
+        path: "/add-tutorials",
+        element: <Register />,
+      },
+      {
+        path: "/my-tutorials",
+        element: <Register />,
+      },
 
       
     ],
