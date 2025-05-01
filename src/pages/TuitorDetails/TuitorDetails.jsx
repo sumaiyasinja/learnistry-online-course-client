@@ -1,22 +1,47 @@
 import { useLoaderData } from "react-router-dom";
 import Title from "../../components/shared/Title";
 import { FaCartArrowDown } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const TuitorDetails = () => {
   const tutor = useLoaderData();
+  const {user}= useContext(AuthContext)
 
   const handleBookTutor = () => {
-    // Handle the booking logic here
-    console.log("Booking tutor:", tutor.name);
+    const bookedTutor = { 
+         tutorialId: tutor._id,
+         image: tutor?.image,
+         language: tutor?.language,
+         price: tutor?.price,
+         tutorEmail: tutor?.email,
+         email: user?.email
+         };
+
+        //  console.log(bookedTutor);
+         
+    axios.post("http://localhost:5000/bookings", bookedTutor) 
+    .then(res=> {
+        if(res.data.insertedId){
+            toast.success("Tutor booked successfully")
+        }
+    })
+    .catch(err=> {
+        console.error(err.message)
+        toast.error("Failed to book tutor")
+    })
+    
   };
 
   return (
     <div className="container mx-auto py-10 px-6">
-      {/* <Title title="Tutor Details" /> */}
+    <Toaster></Toaster>
       <div className="  shadow-lg rounded-2xl p-6 mt-6 flex flex-col py-10  gap-6 ">
         <img
-          src={tutor.image}
-          alt={tutor.name}
+          src={tutor?.image}
+          alt={tutor?.name}
           className=" object-cover rounded-xl max-h-[450px] mb-4"
         />
         <div className="flex-1 space-y-4 ">

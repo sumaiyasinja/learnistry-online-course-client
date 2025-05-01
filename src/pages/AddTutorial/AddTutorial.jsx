@@ -56,7 +56,9 @@ const AddTutorial = () => {
     <div className="max-w-[700px] mx-auto mt-10 p-6 bg-amber-50 shadow-xl rounded-2xl">
       <Title title="Add a Tutorial" />
       <form onSubmit={handleSubmit} className="space-y-4">
-        <label htmlFor="image" className="text-amber-800">Image URL :</label>
+        <label htmlFor="image" className="text-amber-800">
+          Image URL :
+        </label>
         <input
           type="text"
           name="image"
@@ -67,7 +69,9 @@ const AddTutorial = () => {
           required
         />
 
-        <label htmlFor="language" className="text-amber-800">Select Language :</label>
+        <label htmlFor="language" className="text-amber-800">
+          Select Language :
+        </label>
         <select
           name="language"
           value={formData.language}
@@ -75,7 +79,9 @@ const AddTutorial = () => {
           className="select select-bordered my-3 w-full border-2 shadow-md border-amber-600 rounded-2xl px-4 py-2"
           required
         >
-          <option value="" disabled>Select a language</option>
+          <option value="" disabled>
+            Select a language
+          </option>
           {languageOptions.map((lang) => (
             <option key={lang} value={lang} className="text-amber-800">
               {lang}
@@ -83,7 +89,9 @@ const AddTutorial = () => {
           ))}
         </select>
 
-        <label htmlFor="price" className="text-amber-800">Price :</label>
+        <label htmlFor="price" className="text-amber-800">
+          Price :
+        </label>
         <input
           type="number"
           name="price"
@@ -94,7 +102,9 @@ const AddTutorial = () => {
           required
         />
 
-        <label htmlFor="description" className="text-amber-800">Description :</label>
+        <label htmlFor="description" className="text-amber-800">
+          Description :
+        </label>
         <textarea
           name="description"
           placeholder="Description"
