@@ -57,7 +57,7 @@ const Banner = () => {
               <p className="text-lg md:text-2xl   mb-10 leading-none">{slide.subtitle}</p>
           
               <Link to="/allEquipment" className=" rounded-md uppercase bg-amber-800 hover:bg-white hover:text-amber-800 text-white md:py-4 px-2 md:px-8 text-xs font-bold hover:shadow-lg hover:drop-shadow transition duration-200">
-              Choose yous Course Now
+             Find Your Tutor
               </Link>
             </div>
           </div>

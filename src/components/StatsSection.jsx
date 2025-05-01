@@ -1,5 +1,6 @@
 import CountUp from "react-countup";
 import { FaChalkboardTeacher, FaStar, FaLanguage, FaUsers } from "react-icons/fa";
+import Title from "./shared/Title";
 
 const StatsSection = ({ tutorsCount = 0, reviewsCount = 0, languagesCount = 0, usersCount = 0 }) => {
   const stats = [
@@ -28,9 +29,8 @@ const StatsSection = ({ tutorsCount = 0, reviewsCount = 0, languagesCount = 0, u
   return (
     <section className="py-16 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
-          Our Impact in Numbers
-        </h2>
+       <Title title="Our Impact in Numbers" />
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 text-center">
           {stats.map((stat, idx) => (
             <div key={idx} className="p-6 rounded-lg  transition duration-200">

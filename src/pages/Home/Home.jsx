@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet";
 import Banner from "../../components/shared/Banner";
 import StatsSection from "../../components/StatsSection";
+import Categorys from "../../components/categorySection/categorys";
+import FAQSection from "../../components/FAQSection";
 
 const Home = () => {
   return (
@@ -8,10 +10,12 @@ const Home = () => {
       <Helmet>
         <title>Learnistry | Home</title>
       </Helmet>
-      
+
       {/* sections */}
       <Banner></Banner>
       <StatsSection></StatsSection>
+      <Categorys></Categorys>
+      <FAQSection></FAQSection>
     </div>
   );
 };
