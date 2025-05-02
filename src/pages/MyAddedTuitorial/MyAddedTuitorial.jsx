@@ -10,8 +10,8 @@ import Swal from 'sweetalert2';
 const MyAddedTutorial = () => {
   const tuitorials = useLoaderData();
   const [tutorialList, setTutorialList] = useState(tuitorials);
-  const [openModal, setOpenModal] = useState(false);
-
+  
+  
   const handleDelete = async (id) => {
     Swal.fire({
       title: "Are you sure you want to delete this tutorial?",
@@ -50,7 +50,7 @@ const MyAddedTutorial = () => {
         <div className="grid gap-6 mt-8">
           <AnimatePresence>
             {tutorialList.map((item) => (
-              <MyAddedTuitorialCard item={item} key={item._id} handleDelete={handleDelete} openModal={openModal} setOpenModal={setOpenModal}/>
+              <MyAddedTuitorialCard item={item} key={item._id} handleDelete={handleDelete} />
             ))}
           </AnimatePresence>
         </div>

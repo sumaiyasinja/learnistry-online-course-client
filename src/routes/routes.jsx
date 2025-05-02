@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes><AddTutorial /></PrivateRoutes>, 
       },
       {
-        path: `/update-tutorials/:id`,
+        path: `/update-tutorial/:id`,
         element: <PrivateRoutes><UpdateTutorial /></PrivateRoutes>,
         loader: ({ params }) => fetch(`http://localhost:5000/tutorials/${params.id}`),
       },

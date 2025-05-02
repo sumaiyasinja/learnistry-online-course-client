@@ -1,7 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaEdit, FaTrash } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
-const MyAddedTuitorialCard = ({ item , handleDelete,openModal, setOpenModal}) => {
+const MyAddedTuitorialCard = ({ item , handleDelete}) => {
+  const navigate = useNavigate();
     return (
         <motion.div
         key={item._id}
@@ -22,7 +24,7 @@ const MyAddedTuitorialCard = ({ item , handleDelete,openModal, setOpenModal}) =>
           </div>
           <div className="flex gap-3">
             <button
-            //   onClick={() => navigate(`/update-tutorial/${item._id}`)}
+              onClick={() => navigate(`/update-tutorial/${item._id}`)}
               className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
             >
               <FaEdit /> Update
