@@ -9,7 +9,8 @@ import toast, { Toaster } from "react-hot-toast";
 const TuitorDetails = () => {
   const tutor = useLoaderData();
   const {user}= useContext(AuthContext)
-
+    console.log(user.email);
+    
   const handleBookTutor = () => {
     const bookedTutor = { 
          tutorialId: tutor._id,
@@ -28,11 +29,14 @@ const TuitorDetails = () => {
             toast.success("Tutor booked successfully")
         }
     })
-    .catch(err=> {
-        console.error(err.message)
-        toast.error("Failed to book tutor")
-    })
-    
+    .catch((err) => {
+        if (err.response?.status === 409) {
+          toast.error("You have already booked this tutorial.");
+        } else {
+          toast.error("Failed to book tutor.");
+        }
+      });
+      
   };
 
   return (

@@ -9,6 +9,7 @@ import UpdateTutorial from "../pages/UpdateTutorial/UpdateTutorial";
 import FindTutor from "../pages/FindTutor/FindTutor";
 import PrivateRoutes from './PrivateRoutes';
 import TuitorDetails from "../pages/TuitorDetails/TuitorDetails";
+import MyBookings from "../pages/MyBookings/MyBookings";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/tutorials"),
       },
       {
+        path: "/find-tutors/:category",
+        element: <FindTutor />,
+        loader: ({ params }) => fetch(`http://localhost:5000/tutorials/by-category/${params.category}`),
+      },
+      {
         path: "/add-tutorials",
         element: <PrivateRoutes><AddTutorial /></PrivateRoutes>, 
       },
@@ -44,12 +50,18 @@ const router = createBrowserRouter([
       },
       {
         path: `/tutor-details/:id`,
-        element: <TuitorDetails />,
+        element: <PrivateRoutes><TuitorDetails /></PrivateRoutes>,
         loader: ({ params }) => fetch(`http://localhost:5000/tutorials/${params.id}`),
       },
       {
+        path: `/my-booked-tutors/:email`,
+        element: <PrivateRoutes><MyBookings /></PrivateRoutes>, 
+        loader: ({ params }) => fetch(`http://localhost:5000/my-bookings/${params.email}`),
+
+      },
+      {
         path: "/my-tutorials",
-        element: <Register />,
+        element: <Home />,
       },
     ],
   },

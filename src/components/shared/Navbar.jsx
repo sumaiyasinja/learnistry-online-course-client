@@ -44,10 +44,10 @@ const Navbar = () => {
         My Tutorials 
       </NavLink>
       <NavLink
-        to="/my-booked-tutors"
+        to={`/my-booked-tutors/${user?.email}`}
         className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
       >
-        My booked tutors
+        My Booked Tutors
       </NavLink>
       
 
