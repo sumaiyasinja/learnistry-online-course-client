@@ -59,7 +59,7 @@ const FAQSection = () => {
               onClick={() => toggleFAQ(index)}
               className="flex justify-between items-center w-full text-left font-semibold text-lg"
             >
-              <span className='text-amber-800'>{faq.question}</span>
+              <span className='text-amber-800 dark:text-amber-50'>{faq.question}</span>
               <FiChevronDown
                 className={`w-5 h-5 transition-transform duration-300 ${
                   openIndex === index ? 'rotate-180' : ''
@@ -73,7 +73,7 @@ const FAQSection = () => {
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-gray-600 mt-3"
+                  className="text-gray-600 dark:text-gray-200 mt-3"
                 >
                   {faq.answer}
                 </motion.div>

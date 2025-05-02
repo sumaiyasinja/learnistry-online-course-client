@@ -8,9 +8,9 @@ const MyBookingCard = ({ item, handleReview, handleDelete }) => {
             className="w-20 h-14 object-cover rounded-lg"
           />
         </td>
-        <td className="py-3 px-4">{item?.language}</td>
-        <td className="py-3 px-4">${item?.price}</td>
-        <td className="py-3 px-4">{item?.tutorEmail}</td>
+        <td className="py-3 px-4 dark:text-black">{item?.language}</td>
+        <td className="py-3 px-4 dark:text-black">${item?.price}</td>
+        <td className="py-3 px-4 dark:text-black">{item?.tutorEmail}</td>
         <td className="py-3 px-4 flex items-center justify-center gap-2">
           <button
             onClick={() => handleReview(item?.tutorId)}

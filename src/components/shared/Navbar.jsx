@@ -1,11 +1,14 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { useTheme } from "../../provider/ThemeProvider";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showUsername, setShowUsername] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const handleSignOut = () => {
     logOut()
@@ -29,19 +32,19 @@ const Navbar = () => {
         to="/find-tutors"
         className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
       >
-        Find tutors 
+        Find tutors
       </NavLink>
       <NavLink
         to="/add-tutorials"
         className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
       >
-        Add tutorials 
+        Add tutorials
       </NavLink>
       <NavLink
         to={`/my-tutorials/${user?.email}`}
         className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
       >
-        My Tutorials 
+        My Tutorials
       </NavLink>
       <NavLink
         to={`/my-booked-tutors/${user?.email}`}
@@ -49,22 +52,19 @@ const Navbar = () => {
       >
         My Booked Tutors
       </NavLink>
-      
-
     </>
   );
 
   return (
-    <div className="top-0 py-1 lg:py-2 w-full bg-transparent lg:relative z-50 dark:bg-gray-900">
+    <div className="top-0 py-1 lg:py-2 w-full bg-transparent lg:relative z-50 dark:bg-yellow-950">
       <nav className="z-10 sticky top-0 left-0 right-0 max-w-5xl xl:max-w-7xl mx-auto px-5 py-2.5 lg:border-none lg:py-4">
         <div className="flex items-center justify-between">
-          <button>
-            <div className="flex items-center space-x-2">
-              <h2 className="text-black dark:text-white font-bold text-2xl">
-                Learn<span className="text-amber-800">istry</span>
-              </h2>
-            </div>
-          </button>
+          <div className="flex items-center space-x-2">
+            <h2 className="text-black dark:text-white font-bold text-2xl">
+              Learn
+              <span className="text-amber-800 dark:text-amber-100">istry</span>
+            </h2>
+          </div>
 
           {/* Desktop Nav */}
           <div className="hidden lg:block">
@@ -73,31 +73,41 @@ const Navbar = () => {
             </ul>
           </div>
 
+          {/* theme toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 bg-gray-200 rounded-full dark:bg-amber-800 text-gray-800 dark:text-gray-200"
+            aria-label={`Switch to ${
+              theme === "light" ? "dark" : "light"
+            } mode`}
+          >
+            {theme === "light" ? "🌙" : "☀️"}
+          </button>
           {/* Desktop Auth Buttons */}
           {user ? (
             <div className="hidden lg:flex lg:items-center gap-x-2">
-             <div className="relative">
-  {/* User Profile Picture and Name */}
-  <div onClick={() => setShowUsername((prev) => !prev)} 
-  className=" rounded-full"
-  >
+              <div className="relative">
+                {/* User Profile Picture and Name */}
+                <div
+                  onClick={() => setShowUsername((prev) => !prev)}
+                  className=" rounded-full"
+                >
+                  <img
+                    src={user?.photoURL}
+                    alt={user?.displayName}
+                    className="w-10 h-10  rounded-full cursor-pointer"
+                    // onClick={() => setShowUsername((prev) => !prev)}
+                  />
+                </div>
 
-  <img
-    src={user?.photoURL}
-    alt={user?.displayName}
-    className="w-10 h-10  rounded-full cursor-pointer"
-    // onClick={() => setShowUsername((prev) => !prev)}
-    />
-    </div>
-  
-  {showUsername && (
-    <div className="absolute right-0 mt-2 px-2 rounded-2xl  border bg-amber-100 border-gray-200 dark:border-gray-700 shadow-lg py-1 z-20">
-      <p className="block px-2 text-sm text-gray-700 dark:text-white">
-         {user?.displayName}
-      </p>
-    </div>
-  )}
-</div>
+                {showUsername && (
+                  <div className="absolute right-0 mt-2 px-2 rounded-2xl  border bg-amber-100 border-gray-200 dark:border-gray-700 shadow-lg py-1 z-20">
+                    <p className="block px-2 text-sm text-gray-700 dark:text-white">
+                      {user?.displayName}
+                    </p>
+                  </div>
+                )}
+              </div>
 
               <button
                 onClick={handleSignOut}

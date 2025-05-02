@@ -40,9 +40,9 @@ const TuitorDetails = () => {
   };
 
   return (
-    <div className="container mx-auto py-10 px-6">
+    <div className="container bg-white rounded-4xl mx-auto py-7 px-6">
     <Toaster></Toaster>
-      <div className="  shadow-lg rounded-2xl p-6 mt-6 flex flex-col py-10  gap-6 ">
+      <div className="  shadow-lg rounded-2xl p-6 flex flex-col py-2  gap-6 ">
         <img
           src={tutor?.image}
           alt={tutor?.name}

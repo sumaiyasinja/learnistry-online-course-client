@@ -2,32 +2,32 @@ import CountUp from "react-countup";
 import { FaChalkboardTeacher, FaStar, FaLanguage, FaUsers } from "react-icons/fa";
 import Title from "./shared/Title";
 
-const StatsSection = ({ tutorsCount = 0, reviewsCount = 0, languagesCount = 0, usersCount = 0 }) => {
+const StatsSection = ({ tutorsCount = 0, reviewsCount = 0, languagesCount = 9, usersCount = 0 }) => {
   const stats = [
     {
       label: "Experienced Tutors",
       value: tutorsCount,
-      icon: <FaChalkboardTeacher className="text-3xl text-amber-800 mb-2" />,
+      icon: <FaChalkboardTeacher className="text-3xl text-amber-800 dark:text-amber-50 mb-2" />,
     },
     {
       label: "5-Star Reviews",
       value: reviewsCount,
-      icon: <FaStar className="text-3xl text-yellow-500 mb-2" />,
+      icon: <FaStar className="text-3xl text-yellow-500 dark:text-white mb-2" />,
     },
     {
       label: "Languages Offered",
       value: languagesCount,
-      icon: <FaLanguage className="text-3xl text-blue-600 mb-2" />,
+      icon: <FaLanguage className="text-3xl text-blue-600 dark:text-white mb-2" />,
     },
     {
       label: "Registered Users",
       value: usersCount,
-      icon: <FaUsers className="text-3xl text-green-600 mb-2" />,
+      icon: <FaUsers className="text-3xl text-green-600 dark:text-white mb-2" />,
     },
   ];
 
   return (
-    <section className="py-16 bg-white dark:bg-gray-900">
+    <section className="py-16  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
        <Title title="Our Impact in Numbers" />
         
