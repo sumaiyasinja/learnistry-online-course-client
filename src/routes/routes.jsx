@@ -10,6 +10,7 @@ import FindTutor from "../pages/FindTutor/FindTutor";
 import PrivateRoutes from './PrivateRoutes';
 import TuitorDetails from "../pages/TuitorDetails/TuitorDetails";
 import MyBookings from "../pages/MyBookings/MyBookings";
+import MyAddedTuitorial from "../pages/MyAddedTuitorial/MyAddedTuitorial";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: `/update-tutorials/:id`,
-        element: <UpdateTutorial />,
+        element: <PrivateRoutes><UpdateTutorial /></PrivateRoutes>,
         loader: ({ params }) => fetch(`http://localhost:5000/tutorials/${params.id}`),
       },
       {
@@ -60,8 +61,10 @@ const router = createBrowserRouter([
 
       },
       {
-        path: "/my-tutorials",
-        element: <Home />,
+        path: `/my-tutorials/:email`,
+        element: <PrivateRoutes><MyAddedTuitorial /></PrivateRoutes>,
+        loader: ({ params }) => fetch(`http://localhost:5000/tutorials/by-email/${params.email}`),
+
       },
     ],
   },

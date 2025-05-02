@@ -15,7 +15,9 @@ const FindTutorCard = ({tutor}) => {
             />
             <h2 className="text-xl font-semibold text-amber-800">{tutor?.name}</h2>
             <p className="text-sm text-gray-600">Language: {tutor?.language}</p>
+            <p className="text-sm text-gray-600">Price: {tutor?.price}$</p>
             <p className="text-sm text-gray-600">Reviews: {tutor?.review}</p>
+            <p className="text-sm text-gray-600">Description: {tutor?.description}</p>
             <Link
               to={`/tutor-details/${tutor._id}`}
               className="inline-block mt-4 bg-amber-700 text-white px-4 py-2 rounded-lg hover:bg-amber-900 transition"

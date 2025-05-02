@@ -38,7 +38,7 @@ const Navbar = () => {
         Add tutorials 
       </NavLink>
       <NavLink
-        to="/my-tutorials"
+        to={`/my-tutorials/${user?.email}`}
         className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear"
       >
         My Tutorials 
