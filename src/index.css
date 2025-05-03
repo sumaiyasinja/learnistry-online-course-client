@@ -1,8 +1,2 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
-
-@layer base {
-  :root {
-    --color-dark-bg: #510c9100; /* This is the hex for bg-amber-800 */
-    @apply transition-colors duration-200;
-  }

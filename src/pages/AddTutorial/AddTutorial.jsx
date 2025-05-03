@@ -41,7 +41,7 @@ const AddTutorial = () => {
 
     try {
       setLoading(true);
-      await axios.post("http://localhost:5000/tutorials", tutorialData);
+      await axios.post("https://learnistry-server.vercel.app/tutorials", tutorialData);
       toast.success("Tutorial added successfully!");
       setFormData({ image: "", language: "", price: "", description: "" });
     } catch (err) {

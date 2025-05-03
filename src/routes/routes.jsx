@@ -33,12 +33,12 @@ const router = createBrowserRouter([
       {
         path: "/find-tutors",
         element: <FindTutor />,
-        loader: () => fetch("http://localhost:5000/tutorials"),
+        loader: () => fetch("https://learnistry-server.vercel.app/tutorials"),
       },
       {
         path: "/find-tutors/:category",
         element: <FindTutor />,
-        loader: ({ params }) => fetch(`http://localhost:5000/tutorials/by-category/${params.category}`),
+        loader: ({ params }) => fetch(`https://learnistry-server.vercel.app/tutorials/by-category/${params.category}`),
       },
       {
         path: "/add-tutorials",
@@ -47,23 +47,23 @@ const router = createBrowserRouter([
       {
         path: `/update-tutorial/:id`,
         element: <PrivateRoutes><UpdateTutorial /></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/tutorials/${params.id}`),
+        loader: ({ params }) => fetch(`https://learnistry-server.vercel.app/tutorials/${params.id}`),
       },
       {
         path: `/tutor-details/:id`,
         element: <PrivateRoutes><TuitorDetails /></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/tutorials/${params.id}`),
+        loader: ({ params }) => fetch(`https://learnistry-server.vercel.app/tutorials/${params.id}`),
       },
       {
         path: `/my-booked-tutors/:email`,
         element: <PrivateRoutes><MyBookings /></PrivateRoutes>, 
-        loader: ({ params }) => fetch(`http://localhost:5000/my-bookings/${params.email}`),
+        loader: ({ params }) => fetch(`https://learnistry-server.vercel.app/my-bookings/${params.email}`),
 
       },
       {
         path: `/my-tutorials/:email`,
         element: <PrivateRoutes><MyAddedTuitorial /></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/tutorials/by-email/${params.email}`),
+        loader: ({ params }) => fetch(`https://learnistry-server.vercel.app/tutorials/by-email/${params.email}`),
 
       },
     ],

@@ -23,7 +23,7 @@ const MyAddedTutorial = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/tutorials/${id}`);
+          await axios.delete(`https://learnistry-server.vercel.app/tutorials/${id}`);
           setTutorialList(tutorialList.filter(item => item._id !== id));
           toast.success("Tutorial deleted successfully!");
         } catch (error) {

@@ -36,7 +36,7 @@ const UpdateTutorial = () => {
 
     try {
       await axios.patch(
-        `http://localhost:5000/tutorials/${tutorial._id}`,
+        `https://learnistry-server.vercel.app/tutorials/${tutorial._id}`,
         updatedTutorial
       );
       toast.success("Tutorial updated successfully!");

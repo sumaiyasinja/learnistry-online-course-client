@@ -55,7 +55,7 @@ const Register = () => {
         });
         // POST request to backend
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://learnistry-server.vercel.app/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

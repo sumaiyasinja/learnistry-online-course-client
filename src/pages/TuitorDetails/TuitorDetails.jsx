@@ -23,7 +23,7 @@ const TuitorDetails = () => {
 
         //  console.log(bookedTutor);
          
-    axios.post("http://localhost:5000/bookings", bookedTutor) 
+    axios.post("https://learnistry-server.vercel.app/bookings", bookedTutor) 
     .then(res=> {
         if(res.data.insertedId){
             toast.success("Tutor booked successfully")

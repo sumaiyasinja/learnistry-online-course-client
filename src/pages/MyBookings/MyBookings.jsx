@@ -13,7 +13,7 @@ const MyBookings = () => {
   console.log("Bookings:", bookings);
   const handleReview = async (tutorId) => {
     try {
-      await axios.patch(`http://localhost:5000/tutorials/review/${tutorId}`);
+      await axios.patch(`https://learnistry-server.vercel.app/tutorials/review/${tutorId}`);
       toast.success("Review added!");
     } catch (err) {
       console.error("Review error:", err);
@@ -32,7 +32,7 @@ const MyBookings = () => {
     }).then((result) => {
       if (result.isConfirmed) {
     try {
-     axios.delete(`http://localhost:5000/bookings/${bookingId}`);
+     axios.delete(`https://learnistry-server.vercel.app/bookings/${bookingId}`);
       toast.success("Booking deleted.");
     } catch (err) {
       console.error("Delete error:", err);
