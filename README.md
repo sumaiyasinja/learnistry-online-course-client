@@ -22,4 +22,12 @@
 ## packages
 - react icon
 - react router
-- 
+- axios
+- firebase
+- framer-motion
+- lottie-react
+- react-countup
+- react-helmet
+- react-hot-toast
+- react-paginate
+- sweetalert2

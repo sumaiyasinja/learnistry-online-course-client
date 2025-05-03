@@ -32,7 +32,7 @@ const Category = ({ icon = "teacher", name, tutors }) => {
         <p className="text-sm text-gray-500">No of Tutors: {tutors}</p>
       </div>
       </div>
-      <div><IoIosArrowDroprightCircle className="text-3xl text-amber-600" /></div>
+      <div><IoIosArrowDroprightCircle className="text-3xl text-amber-600 dark:text-gray-600" /></div>
     </Link>
   );
 };

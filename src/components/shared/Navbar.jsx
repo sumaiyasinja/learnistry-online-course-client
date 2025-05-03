@@ -56,13 +56,13 @@ const Navbar = () => {
   );
 
   return (
-    <div className="top-0 py-1 lg:py-2 w-full bg-transparent lg:relative z-50 dark:bg-yellow-950">
+    <div className="top-0 py-1 lg:py-2 w-full bg-transparent lg:relative z-50 dark:bg-gray-800">
       <nav className="z-10 sticky top-0 left-0 right-0 max-w-5xl xl:max-w-7xl mx-auto px-5 py-2.5 lg:border-none lg:py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <h2 className="text-black dark:text-white font-bold text-2xl">
               Learn
-              <span className="text-amber-800 dark:text-amber-100">istry</span>
+              <span className="text-amber-800 dark:text-gray-400">istry</span>
             </h2>
           </div>
 
@@ -76,7 +76,7 @@ const Navbar = () => {
           {/* theme toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 bg-gray-200 rounded-full dark:bg-amber-800 text-gray-800 dark:text-gray-200"
+            className="p-2 bg-gray-200 rounded-full dark:bg-gray-700 text-gray-800 dark:text-gray-200"
             aria-label={`Switch to ${
               theme === "light" ? "dark" : "light"
             } mode`}
@@ -101,7 +101,7 @@ const Navbar = () => {
                 </div>
 
                 {showUsername && (
-                  <div className="absolute right-0 mt-2 px-2 rounded-2xl  border bg-amber-100 border-gray-200 dark:border-gray-700 shadow-lg py-1 z-20">
+                  <div className="absolute right-0 mt-2 px-2 rounded-2xl  border bg-amber-100 dark:bg-gray-600 border-gray-200 dark:border-gray-700 shadow-lg py-1 z-20">
                     <p className="block px-2 text-sm text-gray-700 dark:text-white">
                       {user?.displayName}
                     </p>
@@ -111,7 +111,7 @@ const Navbar = () => {
 
               <button
                 onClick={handleSignOut}
-                className="flex items-center cursor-pointer justify-center rounded-md bg-amber-800 hover:bg-white hover:text-amber-800 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
+                className="flex items-center cursor-pointer justify-center rounded-md bg-amber-800 hover:bg-white dark:hover:text-gray-800 dark:bg-gray-600  hover:text-amber-800 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
               >
                 Sign Out
               </button>
@@ -120,13 +120,13 @@ const Navbar = () => {
             <div className="hidden lg:flex lg:items-center gap-x-2">
               <NavLink
                 to="/register"
-                className="flex items-center text-black dark:text-white justify-center px-6 py-2.5 rounded-md hover:bg-amber-800 hover:text-white font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
+                className="flex items-center justify-center rounded-md bg-amber-800 hover:bg-white hover:text-amber-800 dark:hover:text-gray-600 dark:bg-gray-600 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
               >
                 Sign up
               </NavLink>
               <NavLink
                 to="/login"
-                className="flex items-center justify-center rounded-md bg-amber-800 hover:bg-white hover:text-amber-800 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
+                className="flex items-center justify-center rounded-md bg-amber-800 hover:bg-white hover:text-amber-800 dark:hover:text-gray-600 dark:bg-gray-600 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
               >
                 Sign in
               </NavLink>

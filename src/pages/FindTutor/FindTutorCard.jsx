@@ -13,14 +13,14 @@ const FindTutorCard = ({tutor}) => {
               alt={tutor?.name}
               className="w-full h-48 object-cover rounded-lg mb-4"
             />
-            <h2 className="text-xl font-semibold text-amber-800">{tutor?.name}</h2>
+            <h2 className="text-xl font-semibold text-amber-800 dark:text-gray-800">{tutor?.name}</h2>
             <p className="text-sm text-gray-600">Language: {tutor?.language}</p>
             <p className="text-sm text-gray-600">Price: {tutor?.price}$</p>
             <p className="text-sm text-gray-600">Reviews: {tutor?.review}</p>
             <p className="text-sm text-gray-600">Description: {tutor?.description}</p>
             <Link
               to={`/tutor-details/${tutor._id}`}
-              className="inline-block mt-4 bg-amber-700 text-white px-4 py-2 rounded-lg hover:bg-amber-900 transition"
+              className="inline-block mt-4 bg-amber-700 dark:bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-amber-900 dark:hover:bg-gray-800 transition"
             >
               View Details
             </Link>

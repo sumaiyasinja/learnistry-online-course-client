@@ -45,7 +45,7 @@ const MyAddedTutorial = () => {
       <Title title="My Tutorials" />
 
       {tutorialList.length === 0 ? (
-        <p className="text-center text-gray-500 mt-10">No tutorials found.</p>
+        <p className="text-center  text-gray-600 dark:text-gray-400 my-24">No tutorials found.</p>
       ) : (
         <div className="grid gap-6 mt-8">
           <AnimatePresence>

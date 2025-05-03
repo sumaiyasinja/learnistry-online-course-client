@@ -39,7 +39,7 @@ const Banner = () => {
   
 
   return (
-    <div className="sliderAx h-auto">
+    <div className="sliderAx mt-5 h-auto">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -56,7 +56,7 @@ const Banner = () => {
               <p className="text-xl md:text-3xl   font-bold">{slide.title}</p>
               <p className="text-lg md:text-2xl   mb-10 leading-none">{slide.subtitle}</p>
           
-              <Link to="/allEquipment" className=" rounded-md uppercase bg-amber-800 hover:bg-white hover:text-amber-800 text-white md:py-4 px-2 md:px-8 text-xs font-bold hover:shadow-lg hover:drop-shadow transition duration-200">
+              <Link to="/allEquipment" className=" rounded-md uppercase bg-amber-800 dark:bg-gray-800 hover:bg-white hover:text-amber-800 dark:hover:text-gray-800 text-white md:py-4 px-2 md:px-8 text-xs font-bold hover:shadow-lg hover:drop-shadow transition duration-200">
              Find Your Tutor
               </Link>
             </div>
@@ -71,7 +71,7 @@ const Banner = () => {
             key={index}
             onClick={() => goToSlide(index)}
             className={`rounded-full w-4 h-4 mx-1 ${
-              activeSlide === index ? "bg-amber-800" : "bg-amber-400"
+              activeSlide === index ? "bg-amber-800 dark:bg-gray-800" : "bg-amber-400 dark:bg-gray-400"
             }`}
           ></button>
         ))}

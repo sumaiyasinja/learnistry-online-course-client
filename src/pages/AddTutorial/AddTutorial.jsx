@@ -53,10 +53,10 @@ const AddTutorial = () => {
   };
 
   return (
-    <div className="max-w-[700px] mx-auto mt-10 p-6 bg-amber-50 shadow-xl rounded-2xl">
+    <div className="max-w-[700px] mx-auto mt-10 p-6 bg-amber-50 dark:bg-gray-600 shadow-xl rounded-2xl">
       <Title title="Add a Tutorial" />
       <form onSubmit={handleSubmit} className="space-y-4">
-        <label htmlFor="image" className="text-amber-800">
+        <label htmlFor="image" className="text-amber-800 dark:text-gray-800">
           Image URL :
         </label>
         <input
@@ -65,31 +65,31 @@ const AddTutorial = () => {
           placeholder="Enter Tutorial Image URL"
           value={formData.image}
           onChange={handleChange}
-          className="input input-bordered my-3 w-full border-2 shadow-md border-amber-600 rounded-2xl px-4 py-2"
+          className="input input-bordered my-3 w-full border-2 shadow-md border-amber-600 dark:border-gray-800 rounded-2xl px-4 py-2"
           required
         />
 
-        <label htmlFor="language" className="text-amber-800">
+        <label htmlFor="language" className="text-amber-800 dark:text-gray-800">
           Select Language :
         </label>
         <select
           name="language"
           value={formData.language}
           onChange={handleChange}
-          className="select select-bordered my-3 w-full border-2 shadow-md border-amber-600 rounded-2xl px-4 py-2"
+          className="select select-bordered my-3 w-full border-2 shadow-md border-amber-600 dark:border-gray-800 rounded-2xl px-4 py-2"
           required
         >
           <option value="" disabled>
             Select a language
           </option>
           {languageOptions.map((lang) => (
-            <option key={lang} value={lang} className="text-amber-800">
+            <option key={lang} value={lang} className="text-amber-800 dark:text-gray-800">
               {lang}
             </option>
           ))}
         </select>
 
-        <label htmlFor="price" className="text-amber-800">
+        <label htmlFor="price" className="text-amber-800 dark:text-gray-800">
           Price :
         </label>
         <input
@@ -98,11 +98,11 @@ const AddTutorial = () => {
           placeholder="Price"
           value={formData.price}
           onChange={handleChange}
-          className="input input-bordered my-3 w-full border-2 shadow-md border-amber-600 rounded-2xl px-4 py-2"
+          className="input input-bordered my-3 w-full border-2 shadow-md border-amber-600 dark:border-gray-800 rounded-2xl px-4 py-2"
           required
         />
 
-        <label htmlFor="description" className="text-amber-800">
+        <label htmlFor="description" className="text-amber-800 dark:text-gray-800">
           Description :
         </label>
         <textarea
@@ -110,13 +110,13 @@ const AddTutorial = () => {
           placeholder="Description"
           value={formData.description}
           onChange={handleChange}
-          className="textarea textarea-bordered w-full border-2 shadow-md border-amber-600 rounded-2xl px-4 py-2"
+          className="textarea textarea-bordered w-full border-2 shadow-md border-amber-600 dark:border-gray-800 rounded-2xl px-4 py-2"
           required
         ></textarea>
 
         <button
           type="submit"
-          className="btn btn-primary w-full flex items-center justify-center rounded-md bg-amber-800 hover:bg-white hover:text-amber-700 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
+          className="btn btn-primary w-full flex items-center justify-center rounded-md bg-amber-800 hover:bg-white hover:text-amber-700 text-white dark:bg-gray-800 dark:hover:text-gray-700 px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
           disabled={loading}
         >
           {loading ? "Submitting..." : "Submit Tutorial"}

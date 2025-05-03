@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-yellow-950 text-gray-800 dark:text-gray-200 pt-10 pb-6 px-5 lg:px-10 mt-10 border-t border-gray-200 dark:border-gray-700">
+    <footer className="bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-200 pt-10 pb-6 px-5 lg:px-10 mt-10 border-t border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
         {/* Learnistry Logo + Description */}

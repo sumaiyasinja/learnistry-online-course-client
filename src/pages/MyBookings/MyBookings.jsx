@@ -48,11 +48,11 @@ const MyBookings = () => {
       <Toaster />
       <Title title="My Booked Tutors" />
       {bookings.length === 0 ? (
-        <p className="text-center mt-6 text-gray-600">No bookings found.</p>
+        <p className="text-center  text-gray-600 dark:text-gray-400 my-24">No bookings found.</p>
       ) : (
         <div className="overflow-x-auto mt-8">
           <table className="min-w-full bg-white shadow rounded-xl overflow-hidden">
-            <thead className="bg-amber-100 text-amber-800">
+            <thead className="bg-amber-100 dark:bg-gray-300 text-amber-800 dark:text-gray-800">
               <tr>
                 <th className="py-3 px-4 text-left">Image</th>
                 <th className="py-3 px-4 text-left">Language</th>

@@ -60,27 +60,27 @@ const UpdateTutorial = () => {
   ];
 
   return (
-    <div className="max-w-[700px] mx-auto mt-10 p-6 bg-amber-50 shadow-xl rounded-2xl">
+    <div className="max-w-[700px] mx-auto mt-10 p-6 bg-amber-50 dark:bg-gray-600 shadow-xl rounded-2xl">
       <Title title="Update Tutorial" />
       <form onSubmit={handleSubmit} className="space-y-4">
-        <label htmlFor="image" className="text-amber-800">
+        <label htmlFor="image" className="text-amber-800 dark:text-gray-950">
           Image URL :
         </label>
         <input
           type="text"
           name="image"
           defaultValue={tutorial.image}
-          className="input input-bordered my-3 w-full border-2 shadow-md border-amber-600 rounded-2xl px-4 py-2"
+          className="input input-bordered my-3 w-full border-2 shadow-md border-amber-600 dark:border-white rounded-2xl px-4 py-2"
           required
         />
 
-        <label htmlFor="language" className="text-amber-800">
+        <label htmlFor="language" className="text-amber-800 dark:text-gray-950">
           Select Language :
         </label>
         <select
           name="language"
           defaultValue={tutorial.language}
-          className="select select-bordered my-3 w-full border-2 shadow-md border-amber-600 rounded-2xl px-4 py-2"
+          className="select select-bordered my-3 w-full border-2 shadow-md border-amber-600 dark:border-white rounded-2xl px-4 py-2"
           required
         >
           <option value="" disabled>
@@ -91,37 +91,37 @@ const UpdateTutorial = () => {
               key={lang}
               value={lang}
               defaultValue={tutorial.language}
-              className="text-amber-800"
+              className="text-amber-800 dark:text-gray-950"
             >
               {lang}
             </option>
           ))}
         </select>
 
-        <label htmlFor="price" className="text-amber-800">
+        <label htmlFor="price" className="text-amber-800 dark:text-gray-950">
           Price :
         </label>
         <input
           type="number"
           name="price"
           defaultValue={tutorial.price}
-          className="input input-bordered my-3 w-full border-2 shadow-md border-amber-600 rounded-2xl px-4 py-2"
+          className="input input-bordered my-3 w-full border-2 shadow-md border-amber-600 dark:border-white rounded-2xl px-4 py-2"
           required
         />
 
-        <label htmlFor="description" className="text-amber-800">
+        <label htmlFor="description" className="text-amber-800 dark:text-gray-950">
           Description :
         </label>
         <textarea
           name="description"
           defaultValue={tutorial.description}
-          className="textarea textarea-bordered w-full border-2 shadow-md border-amber-600 rounded-2xl px-4 py-2"
+          className="textarea textarea-bordered w-full border-2 shadow-md border-amber-600 dark:border-white rounded-2xl px-4 py-2"
           required
         ></textarea>
 
         <button
           type="submit"
-          className="btn btn-primary w-full flex items-center justify-center rounded-md bg-amber-800 hover:bg-white hover:text-amber-700 text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
+          className="btn btn-primary w-full flex items-center justify-center rounded-md bg-amber-800 hover:bg-white hover:text-amber-700 text-white dark:bg-gray-800 dark:hover:text-gray-700 px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"
         >
           Update Tutorial
         </button>

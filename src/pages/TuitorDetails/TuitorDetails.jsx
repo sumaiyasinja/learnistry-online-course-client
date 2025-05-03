@@ -40,7 +40,7 @@ const TuitorDetails = () => {
   };
 
   return (
-    <div className="container bg-white rounded-4xl mx-auto py-7 px-6">
+    <div className="container mt-5 bg-white rounded-4xl mx-auto py-7 px-6">
     <Toaster></Toaster>
       <div className="  shadow-lg rounded-2xl p-6 flex flex-col py-2  gap-6 ">
         <img
